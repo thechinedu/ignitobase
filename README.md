@@ -9,6 +9,6 @@ _Disclaimer:_ IgnitoCore primarily serves as a playground for me to learn and en
 - [ ] IgnitoDB - Realtime database system to store, query and manage your application data
 - [ ] IgnitoAuth - Manage user sign ups and logins via email/password or OAuth2
 - [ ] IgnitoStorage - Easily store and serve static files
-- [ ] IgnitoMail - Customize and send emails with ease
+- [ ] IgnitoNotify - Customize and send emails and in-app notifications with ease
 - [ ] IgnitoStorage - Easily store and serve static files
 - [ ] IgnitoFunctions - Set up custom functionality using serverless functions
