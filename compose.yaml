@@ -1,0 +1,60 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker compose reference guide at
+# https://docs.docker.com/compose/compose-file/
+
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+# DB_SERVICE_PORT=3002
+# AUTH_SERVICE_PORT=3003
+# FUNCTIONS_SERVICE_PORT=3004
+# NOTIFICATION_SERVICE_PORT=3005
+# STORAGE_SERVICE_PORT=3006
+services:
+  app:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - $CLIENT_PORT:$CLIENT_PORT
+      - $GATEWAY_SERVICE_PORT:$GATEWAY_SERVICE_PORT
+      - $DB_SERVICE_PORT:$DB_SERVICE_PORT
+      - $AUTH_SERVICE_PORT:$AUTH_SERVICE_PORT
+      - $FUNCTIONS_SERVICE_PORT:$FUNCTIONS_SERVICE_PORT
+      - $NOTIFICATION_SERVICE_PORT:$NOTIFICATION_SERVICE_PORT
+      - $STORAGE_SERVICE_PORT:$STORAGE_SERVICE_PORT
+    command: ["/bin/sh", "-c", "yarn dev"]
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/apps/ignito/node_modules
+      - /app/apps/ignitoDB/node_modules
+      - /app/apps/frontend/node_modules
+      - /app/packages/eslint-config-custom/node_modules
+      - /app/packages/tsconfig/node_modules
+      - /app/packages/ui/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16.0-alpine3.18
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $DATABASE_NAME -U $DATABASE_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  db-data:
