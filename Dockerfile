@@ -18,7 +18,7 @@ COPY ["./packages/eslint-config-custom/package.json", "./packages/eslint-config-
 COPY ["./packages/tsconfig/package.json", "./packages/tsconfig/"]
 COPY ["./packages/ui/package.json", "./packages/ui/"]
 
-RUN yarn install 
+RUN yarn install
 
 # Copy the rest of the source files into the image.
 COPY . .
