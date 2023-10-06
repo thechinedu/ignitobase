@@ -1,8 +1,8 @@
-# IgnitoCore
+# IgnitoBase
 
 Open source backend as a service for mobile and web applications.
 
-_Disclaimer:_ IgnitoCore primarily serves as a playground for me to learn and enhance my knowledge of building intricate backend applications.
+_Disclaimer:_ IgnitoBase primarily serves as a playground for me to learn and enhance my knowledge of building intricate backend applications.
 
 ### Features planned
 

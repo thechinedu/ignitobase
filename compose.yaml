@@ -30,7 +30,7 @@ services:
     volumes:
       - ./:/app
       - /app/node_modules
-      - /app/apps/ignito/node_modules
+      - /app/apps/ignitocore/node_modules
       - /app/apps/ignitoDB/node_modules
       - /app/apps/frontend/node_modules
       - /app/packages/eslint-config-custom/node_modules

@@ -15,7 +15,7 @@ async function bootstrap() {
     .setTitle('Ignito Gateway')
     .setDescription('The core Ignito service')
     .setVersion('1.0')
-    .addTag('ignito')
+    .addTag('ignito-core')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

@@ -11,7 +11,7 @@ FROM node:${NODE_VERSION}-alpine
 WORKDIR /app
 
 COPY ["package.json", "yarn.lock", "./"]
-COPY ["./apps/ignito/package.json", "./apps/ignito/"]
+COPY ["./apps/ignitocore/package.json", "./apps/ignitocore/"]
 COPY ["./apps/ignitoDB/package.json", "./apps/ignitoDB/"]
 COPY ["./apps/frontend/package.json", "./apps/frontend/"]
 COPY ["./packages/eslint-config-custom/package.json", "./packages/eslint-config-custom/"]
