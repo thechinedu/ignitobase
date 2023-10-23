@@ -8,7 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@nestjs/cli": "^10.1.17",
+    "@nestjs/cli": "^10.2.0",
     "@nestjs/schematics": "^10.0.2",
     "@turbo/gen": "^1.9.7",
     "@types/node": "^20.6.2",
