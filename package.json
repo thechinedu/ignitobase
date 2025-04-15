@@ -1,28 +1,12 @@
 {
+  "name": "ignitobase",
+  "module": "index.ts",
+  "type": "module",
   "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "dotenv turbo run dev",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
   "devDependencies": {
-    "@nestjs/cli": "^10.1.17",
-    "@nestjs/schematics": "^10.0.2",
-    "@turbo/gen": "^1.9.7",
-    "@types/node": "^20.6.2",
-    "dotenv-cli": "^7.3.0",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
-    "prettier": "^2.5.1",
-    "turbo": "latest",
-    "typescript": "^5.1.6"
+    "@types/bun": "latest"
   },
-  "name": "ignitocore",
-  "packageManager": "yarn@1.22.19",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "peerDependencies": {
+    "typescript": "^5"
+  }
 }
