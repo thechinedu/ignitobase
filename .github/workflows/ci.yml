@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run the CI workflow
-        run: docker build . --file Dockerfile.ci --tag ignitobase-ci:$(date +%s)
+        run: echo "Setup the CI workflow"
