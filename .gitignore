@@ -16,3 +16,5 @@ coverage
 .env.development.local
 .env.test.local
 .env.production.local
+
+NEXT_TASK.md

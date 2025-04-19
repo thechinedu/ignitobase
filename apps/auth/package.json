@@ -1,0 +1,13 @@
+{
+  "name": "ignitobase-auth",
+  "module": "index.ts",
+  "version": "0.0.1",
+  "description": "User authentication, authorization and management system for IgnitoBase.",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
