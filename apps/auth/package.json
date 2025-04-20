@@ -4,8 +4,23 @@
   "version": "0.0.1",
   "description": "User authentication, authorization and management system for IgnitoBase.",
   "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index",
+    "start": "bun src/index",
+    "test": "bun test",
+    "lint": "eslint",
+    "format": "prettier"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@eslint/js": "^9.25.0",
+    "@types/bun": "latest",
+    "eslint": "^9.25.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.0.0",
+    "prettier": "3.5.3",
+    "typescript-eslint": "^8.30.1"
   },
   "peerDependencies": {
     "typescript": "^5"
